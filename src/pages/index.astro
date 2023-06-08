@@ -1,81 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const contactInfo = [
+	{
+		name: "Email",
+		link: "mailto:austin.nazworth@gmail.com",
+	},
+	{
+		name: "Github",
+		link: "https://www.github.com/anazworth",
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/in/austin-nazworth",
+	},
+];
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+<Layout title="Austin Nazworth">
+	<main class="flex flex-col mb-auto bg-mantle">
+		<div class="flex flex-col px-2 py-8 bg-surface0 w-full">
+			<div
+				class="flex flex-row justify-center group space-x-4 sm:space-x-12 py-4"
+			>
+				<img
+					src="/austin.jpeg"
+					alt="Austin Nazworth"
+					class="h-72 shadow-xl shadow-mantle sm:group-hover:shadow-2xl transition-shadow duration-500 ease-in-out"
+				/>
+				<div class="flex flex-col justify-center">
+					<h1 id="heroname" class="text-4xl sm:text-7xl font-bold">
+						Hi,<br /> I'm Austin
+					</h1>
+					<p class="text:sm sm:text-xl">Software Engineer</p>
+					<h2 class="text-xl sm:text-2xl">
+						I'm passionate about building new things and learning
+						new skills along the way.
+					</h2>
+				</div>
+			</div>
+		</div>
+		<div
+			class="flex my-12 bg-base justify-center rounded-md outline outline-1 outline-theme-4 max-w-2xl py-4 px-12 m-auto"
+		>
+			<div class="flex flex-col">
+				<h1>Get in touch with me</h1>
+				<div class="flex flex-row justify-center text-maroon space-x-4">
+					{
+						contactInfo.map(({ name, link }) => (
+							<a href={link}>{name}</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+		<img src="/signature.svg" class="h-24 p-4 bg-mantle" />
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
