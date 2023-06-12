@@ -25,7 +25,7 @@ const { title } = Astro.props;
 			rel="stylesheet"
 		/>
 	</head>
-	<body class="flex flex-col h-screen justify-between">
+	<body class="flex flex-col">
 		<Navbar />
 		<slot />
 		<Footer />
@@ -53,7 +53,13 @@ const { title } = Astro.props;
 		h2 {
 			@apply text-theme-4;
 		}
+		h3 {
+			@apply text-peach;
+		}
 		p {
+			@apply text-peach;
+		}
+		a {
 			@apply text-peach;
 		}
 	}

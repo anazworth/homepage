@@ -1,0 +1,22 @@
+---
+const { title, description, heroImage, alt, odd } = Astro.props;
+---
+
+<div class="flex w-full h-screen items-center">
+    <div
+        class="flex flex-row m-2 rounded-md w-full space-x-4 justify-around even:flex-row-reverse"
+    >
+        {odd && <img src={heroImage} alt={alt} class="sm:h-screen" />}
+        <div class="flex flex-col justify-center">
+            <h1 class="text-peach text-xl sm:text-6xl sm:font-extrabold">
+                {title}
+            </h1>
+            {
+                description.map((item: unknown) => (
+                    <p class="sm:text-2xl text-maroon">{item}</p>
+                ))
+            }
+        </div>
+        {!odd && <img src={heroImage} alt={alt} class="sm:h-screen" />}
+    </div>
+</div>
