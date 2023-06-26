@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const projects = await Astro.glob("/src/content/portfolio/*.md");
+
+  return projects.map((project) => ({
+    params: {
+      project: project.frontmatter.url,
+    },
+    props: {
+      thing: project.frontmatter,
+    },
+  }));
+}
+
+const { title, description, heroImage, alt, tech, link } = Astro.props.thing;
+---
+
+<Layout title="Projects">
+  <div
+    class="flex flex-col min-h-screen mb-20 sm:mb-0 py-4 max-w-7xl m-auto space-y-12 items-center text-center"
+  >
+    <h1 class="text-5xl font-bold sm:py-12">{title}</h1>
+    <div class="flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-4">
+      <div class="px-2 sm:px-0 max-w-2xl">
+        <img
+          src={heroImage}
+          alt={alt}
+          class="w-fit mx-auto shadow-2xl shadow-slate-500"
+        />
+      </div>
+      <div class="flex flex-col space-y-8 justify-center text-center">
+        <h2 class="text-xl rounded-lg p-4">
+          {description}
+        </h2>
+        <div class="flex flex-col sm:flex-row">
+          <div
+            class="flex flex-col justify-center mx-auto w-1/2 text-center bg-slate-500 dark:bg-slate-300 shadow-lg max-w-lg rounded-lg"
+          >
+            <h1
+              class="text-2xl font-bold italic bg-slate-100 dark:bg-slate-800 rounded-t-lg p-2"
+            >
+              Built with...
+            </h1>
+            {
+              tech.map((t) => (
+                <span class="text-2xl text-slate-200 dark:text-slate-800 mx-2">
+                  {t}
+                </span>
+              ))
+            }
+          </div>
+          <a href={link} class="flex mx-auto p-4 max-h-24 my-auto">
+            <button
+              class="bg-slate-700 dark:bg-slate-800 text-slate-100 p-4 rounded-lg hover:bg-slate-400 hover:text-slate-950 duration-500"
+              >View Project</button
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

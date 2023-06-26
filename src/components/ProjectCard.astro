@@ -2,10 +2,13 @@
 const { title, heroImage, alt, link } = Astro.props;
 ---
 
-<div class="flex flex-col justify-center rounded-md bg-mantle space-y-4 py-4">
+<div
+    class="flex flex-col bg-slate-100/80 shadow-md justify-center rounded-md bg-mantle space-y-4 py-4"
+>
     <a href={link} class="justify-center mx-auto">
         <img src={heroImage} alt={alt} class="w-full max-h-48 max-w-sm" />
     </a>
-    <a href={link} class="text-theme-4 text-lg font-bold text-center">{title}</a
+    <a href={link} class="text-lg text-slate-800 font-bold text-center"
+        >{title}</a
     >
 </div>

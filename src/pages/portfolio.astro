@@ -6,24 +6,24 @@ const content = await Astro.glob("/src/content/portfolio/*.md");
 ---
 
 <Layout title="Portfolio Work">
-    <div class="h-screen bg-surface0">
-        <div
-            class="grid sm:grid-cols-2 gap-4 m-auto max-w-7xl w-full p-4 bg-surface0 justify-center space-y-4 sm:space-y-0"
-        >
-            {
-                content.map((page) => {
-                    return (
-                        <ProjectCard
-                            title={page.frontmatter.title}
-                            heroImage={page.frontmatter.heroImage}
-                            alt={page.frontmatter.alt}
-                            description={page.frontmatter.description}
-                            tech={page.frontmatter.tech}
-                            link={page.frontmatter.link}
-                        />
-                    );
-                })
-            }
-        </div>
+  <div class="h-screen bg-surface0">
+    <div
+      class="grid sm:grid-cols-2 gap-4 mt-12 m-auto max-w-7xl w-full p-4 bg-surface0 justify-center space-y-4 sm:space-y-0"
+    >
+      {
+        content.map((page) => {
+          return (
+            <ProjectCard
+              title={page.frontmatter.title}
+              heroImage={page.frontmatter.heroImage}
+              alt={page.frontmatter.alt}
+              description={page.frontmatter.description}
+              tech={page.frontmatter.tech}
+              link={"/projects/" + page.frontmatter.url}
+            />
+          );
+        })
+      }
     </div>
+  </div>
 </Layout>

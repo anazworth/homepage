@@ -6,15 +6,17 @@ const content = await Astro.glob("/src/content/about/*.md");
 ---
 
 <Layout title="About me">
-    {
-        content.map((page, index) => (
-            <AboutCard
-                title={page.frontmatter.title}
-                description={page.frontmatter.description}
-                heroImage={page.frontmatter.image}
-                alt={page.frontmatter.alt}
-                odd={index % 2 === 0}
-            />
-        ))
-    }
+    <div class="flex flex-col my-12">
+        {
+            content.map((page, index) => (
+                <AboutCard
+                    title={page.frontmatter.title}
+                    description={page.frontmatter.description}
+                    heroImage={page.frontmatter.image}
+                    alt={page.frontmatter.alt}
+                    odd={index % 2 === 0}
+                />
+            ))
+        }
+    </div>
 </Layout>

@@ -19,15 +19,17 @@ const contactInfo = [
 ---
 
 <Layout title="Austin Nazworth">
-	<main class="flex flex-col mb-auto bg-mantle">
-		<div class="flex flex-col px-2 py-8 bg-surface0 w-full">
+	<main
+		class="flex flex-col h-screen justify-evenly bg-slate-200 dark:bg-slate-700 mb-auto"
+	>
+		<div class="flex flex-col px-2 py-8 w-full">
 			<div
 				class="flex flex-row justify-center group space-x-4 sm:space-x-12 py-4"
 			>
 				<img
 					src="/austin.jpeg"
 					alt="Austin Nazworth"
-					class="h-72 shadow-xl shadow-mantle sm:group-hover:shadow-2xl transition-shadow duration-500 ease-in-out"
+					class="h-72 sm:h-96 shadow-xl shadow-mantle sm:group-hover:shadow-2xl transition-shadow duration-500 ease-in-out"
 				/>
 				<div class="flex flex-col justify-center">
 					<h1 id="heroname" class="text-4xl sm:text-7xl font-bold">
@@ -42,14 +44,20 @@ const contactInfo = [
 			</div>
 		</div>
 		<div
-			class="flex my-12 bg-base justify-center rounded-md outline outline-1 outline-theme-4 max-w-2xl py-4 px-12 m-auto"
+			class="flex my-12 bg-slate-100 dark:bg-slate-500 w-full justify-center rounded-md outline outline-1 outline-slate-600 dark:outline-slate-300 max-w-sm sm:max-w-lg py-4 px-12 m-auto"
 		>
-			<div class="flex flex-col">
+			<div class="flex flex-col min-w-full space-y-4 text-center">
 				<h1>Get in touch with me</h1>
-				<div class="flex flex-row justify-center text-maroon space-x-4">
+				<div
+					class="flex justify-around w-full h-full rounded-sm rounded-t-none"
+				>
 					{
 						contactInfo.map(({ name, link }) => (
-							<a href={link}>{name}</a>
+							<a href={link}>
+								<button class="rounded-sm bg-slate-600 text-slate-100 px-4 py-2">
+									{name}
+								</button>
+							</a>
 						))
 					}
 				</div>
