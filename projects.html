@@ -31,12 +31,12 @@ projects:
     >
       <div class="flex flex-col justify-evenly space-y-4">
         <p
-          class="flex text-lg font-medium text-justify leading-6 text-gray-500 max-w-md"
+          class="flex text-lg font-medium text-justify leading-6 text-gray-600 max-w-md"
         >
           {{ project.description }}
         </p>
         <details
-          class="flex text-gray-500 border border-gray-300 rounded-lg mx-auto w-full max-w-sm"
+          class="flex text-gray-600 border border-gray-300 rounded-lg mx-auto w-full max-w-sm"
         >
           <summary class="p-2">The Stack</summary>
           <hr />
@@ -47,13 +47,15 @@ projects:
           </ul>
         </details>
       </div>
-      <img
-        src="{{ project.image }}"
-        alt="{{ project.image-alt }}"
-        height="fit"
-        width="fit"
-        class="max-w-lg drop-shadow-xl"
-      />
+      <div class="sm:w-2/4">
+        <img
+          src="{{ project.image }}"
+          alt="{{ project.image-alt }}"
+          height="100%"
+          width="100%"
+          class="max-w-lg drop-shadow-xl m-auto"
+        />
+      </div>
     </div>
     <hr class="border-gray-400" />
   </div>
