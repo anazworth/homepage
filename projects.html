@@ -1,0 +1,59 @@
+---
+layout: default
+title: Contact Me
+
+projects:
+  - name: North Florida Communications
+    gh-link:
+    link: https://northfloridacommunications.com
+    image: /assets/img/nfc.webp
+    description: I modernized the website for a regional commerical phone provider. I chose Next.js for this company's website so we could take advantage of the edge functions, which I used to receive quotes and emergency requests.
+    stack:
+      - Next.js
+      - Tailwind Css
+      - Email.js
+      - TypeScript
+      - Vercel
+---
+
+<div class="my-auto">
+  {% for project in page.projects %}
+  <div class="flex flex-col space-y-12">
+    <a
+      href="{{ project.link }}"
+      target="_blank"
+      class="text-3xl font-bold text-gray-600"
+      >{{ project.name }}</a
+    >
+    <div
+      class="flex flex-col space-y-12 sm:space-y-0 sm:flex-row-reverse justify-evenly"
+    >
+      <div class="flex flex-col justify-evenly space-y-4">
+        <p
+          class="flex text-lg font-medium text-justify leading-6 text-gray-500 max-w-md"
+        >
+          {{ project.description }}
+        </p>
+        <details
+          class="flex text-gray-500 border border-gray-300 rounded-lg mx-auto w-full max-w-sm"
+        >
+          <summary class="p-2">The Stack</summary>
+          <hr />
+          <ul class="space-y-2 text-center">
+            {% for item in project.stack %}
+            <li class="text-center">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </details>
+      </div>
+      <img
+        src="{{ project.image }}"
+        height="fit"
+        width="fit"
+        class="max-w-lg drop-shadow-xl"
+      />
+    </div>
+    <hr class="border-gray-400" />
+  </div>
+  {% endfor %}
+</div>
