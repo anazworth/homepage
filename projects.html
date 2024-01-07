@@ -3,6 +3,16 @@ layout: default
 title: Contact Me
 
 projects:
+  - name: Upstairs View
+    gh-link:
+    link: https://upstairsview.com
+    image: /assets/img/upstairsview.png
+    image-alt: Screenshot of the Upstairs View website.
+    description: A platform for viewing and creating reviews of apartments, HOAs, and housing communities.
+    stack:
+      - Ruby on Rails
+      - MySQL
+      - Tailwind CSS
   - name: North Florida Communications
     gh-link:
     link: https://northfloridacommunications.com
@@ -17,7 +27,7 @@ projects:
       - Vercel
 ---
 
-<div class="my-auto">
+<div class="my-auto space-y-8">
   {% for project in page.projects %}
   <div class="flex flex-col space-y-12">
     <a
@@ -31,14 +41,14 @@ projects:
     >
       <div class="flex flex-col justify-evenly space-y-4">
         <p
-          class="flex text-lg font-medium text-justify leading-6 text-gray-600 max-w-md"
+          class="flex text-lg font-medium text-justify tracking-tight leading-6 text-gray-600 max-w-md"
         >
           {{ project.description }}
         </p>
         <details
           class="flex text-gray-600 border border-gray-300 rounded-lg mx-auto w-full max-w-sm"
         >
-          <summary class="p-2">The Stack</summary>
+          <summary class="p-2">Built with:</summary>
           <hr />
           <ul class="space-y-2 text-center">
             {% for item in project.stack %}
@@ -48,16 +58,21 @@ projects:
         </details>
       </div>
       <div class="sm:w-2/4">
-        <img
-          src="{{ project.image }}"
-          alt="{{ project.image-alt }}"
-          height="100%"
-          width="100%"
-          class="max-w-lg drop-shadow-xl m-auto"
-        />
+        <a href="{{ project.link }}" target="_blank" class="group">
+          <img
+            src="{{ project.image }}"
+            alt="{{ project.image-alt }}"
+            height="100%"
+            width="100%"
+            class="max-w-lg drop-shadow-xl m-auto group-hover:drop-shadow-2xl transition-all duration-500"
+          />
+        </a>
       </div>
     </div>
+    {% if project.name != "North Florida Communications" %}
+    <!-- TW `last:hidden` is not working here -->
     <hr class="border-gray-400" />
+    {% endif %}
   </div>
   {% endfor %}
 </div>
