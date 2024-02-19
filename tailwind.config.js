@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      darkMode: "class",
       colors: {
         darkbase: "#0F141B",
         lightbase: "#F0F0E8",

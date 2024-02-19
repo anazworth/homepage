@@ -27,22 +27,28 @@ list:
       class="sm:block sm:max-w-xl"
     />
     <div class="my-auto text-start">
-      <h2 class="text-lg sm:text-xl font-bold text-gray-600">
+      <h2 class="text-lg sm:text-xl font-bold text-gray-600 dark:text-gray-400">
         {{ page.greeting }}
       </h2>
-      <h1 class="text-4xl sm:text-6xl font-semibold text-gray-800">
+      <h1
+        class="text-4xl sm:text-6xl font-semibold text-gray-800 dark:text-gray-200"
+      >
         {{ page.headline }}
       </h1>
       <br />
-      <p class="text-gray-700 font-bold">{{ page.bio }}</p>
+      <p class="text-gray-700 dark:text-gray-300 font-bold">{{ page.bio }}</p>
     </div>
   </div>
 
   <div class="flex flex-col mx-auto sm:my-24 space-y-8">
-    <h2 class="text-3xl font-bold text-gray-600">Tech I love</h2>
+    <h2 class="text-3xl font-bold text-gray-600 dark:text-gray-400">
+      Tech I love
+    </h2>
     <div class="flex flex-row space-x-4">
       {% for tech in page.list %}
-      <span class="h-8 w-8 sm:h-10 sm:w-10 fill-gray-600">{{ tech }}</span>
+      <span class="h-8 w-8 sm:h-10 sm:w-10 fill-gray-600 dark:fill-gray-300"
+        >{{ tech }}</span
+      >
       {% endfor %}
     </div>
   </div>

@@ -2,7 +2,6 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <style>html{visibility: hidden;opacity:0;}</style>
-    <style>@tailwind base; @tailwind components; @tailwind utilities;</style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="description" content="Personal website of Austin Nazworth. Explore my skills, experience, and contributions to the tech community. Let's build something together!" >
@@ -20,8 +19,16 @@
     visibility: visible;
     opacity: 1;
     }</style>
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+
+    </script>
   </head>
-  <body class="flex flex-col min-h-screen bg-lightbase max-w-7xl text-center m-auto p-4">
+  <body class="flex flex-col min-h-screen bg-lightbase dark:bg-darkbase max-w-7xl text-center m-auto p-4">
     <script>0</script>
     {% include nav.html %}
       {{ content }}
