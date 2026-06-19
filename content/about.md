@@ -1,9 +1,10 @@
 ---
+title: "About Me"
+date: 2026-06-13
+
 sharingLinks: false
 showAuthor: false
 showDate: false
-
-title: "About Me"
 ---
 
 I live in Winter Garden, FL with my wife, son, and our dog.

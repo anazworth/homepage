@@ -1,5 +1,6 @@
 ---
 title: "My tools and configuration"
+date: 2026-06-19
 showDate: false
 ---
 
