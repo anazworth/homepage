@@ -15,9 +15,10 @@
   pageRef = "about"
   weight = 10
 
-#[[main]]
-#  name = "Parent"
-#  weight = 20
+[[main]]
+  name = "Setup"
+  pageRef = "setup"
+  weight = 20
 
 [[main]]
   pre = "github"
