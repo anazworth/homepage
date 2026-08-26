@@ -21,6 +21,6 @@ I spent 5 years in the Marine Corps as an AV-8B Harrier mechanic.
 
 I was lucky enough to travel all over the world and have experiences that have shaped the rest of my life.
 
-{{< figure src="img/harrier.gif" alt="A AV-8B Harrier in Chitose, Japan" caption="Chitose, Japan" >}}
+{{< figure default=true src="img/harrier.gif" alt="A AV-8B Harrier in Chitose, Japan" caption="Chitose, Japan" >}}
 
 {{< figure src="img/japandla.jpeg" alt="Myself and friends in Chitose, Japan" caption="[Source: DLA](https://www.dla.mil/About-DLA/News/Energy/Article/1027050/enlisted-marines-keeping-birds-in-the-air/)" >}}
